@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Typography } from '@mui/material';
+import './style.css'
+import Router from './Router';
+import Wrapper from './shared-components/Wrapper';
+import axios from 'axios'
+import { useEffect } from 'react';
+import {Provider} from 'react-redux'
+import store from './store/store';
+
+import { createClient } from 'pexels';
+
+// const client = createClient(process?.env?.API_KEY);
+
+// client.photos.show({ id: 2499611 }).then(photo => {console.log(photo)});
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='background-black'>
+      <Provider store={store}>
+        <Wrapper>
+          <Router/>
+        </Wrapper>
+      </Provider>
     </div>
-  );
+    );
 }
 
 export default App;

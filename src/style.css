@@ -3,9 +3,12 @@
   padding: 0;
 }
 
+:root {
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
 .background-black {
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
-  color: white;
+  color: rgb(32, 32, 32);
+  display: "flex";
 }
